@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pickle
+import sklearn
 
 # ===== Load trained model =====
 with open("random_forest_model.pkl", "rb") as f:
@@ -69,3 +70,4 @@ if st.button("Predict Dropout Risk"):
         st.error(f"⚠️ Student is AT RISK of dropping out (Risk Probability: {probability:.2%})")
     else:
         st.success(f"✅ Student is NOT at high risk (Risk Probability: {probability:.2%})")
+
